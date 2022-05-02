@@ -10,7 +10,7 @@ include 'header.php';
                 <div>
                     <h1>WELCOME</h1>
                     <p>
-Vous souhaitez développer votre notoriété et valoriser en ligne votre entreprise,
+                        Vous souhaitez développer votre notoriété et valoriser en ligne votre entreprise,
                         les produits et services que vous commercialisez afin d'engendrer de nouveaux contacts et
                         prospects, générer des demandes de devis ?<br></p>
                     <p> Nous sommes source de propositions,
