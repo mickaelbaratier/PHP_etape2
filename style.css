@@ -1,0 +1,147 @@
+/*header */
+
+/* CSS accueil début */
+
+.bg-blue{
+    background-color: #0e5ccd;
+    color: #fff;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px #000 ;
+
+}
+.bg-blue, .gneh{
+    margin: 50px;
+}
+
+.titi{
+    border-radius: 20px;
+}
+.gneh{
+    color: #fff;
+}
+.hi{
+    margin: 30px;
+}
+
+.toto{
+    height: 100px;
+    padding: 5px;
+    filter:invert();
+}
+
+.col-3{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+.tata{
+    text-align: right;
+}
+.hoho{
+    color:#fff;
+}
+.hoho:hover{
+    color:#fff;
+}
+
+@media screen and (max-width: 768px) {
+    .gneh{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .bowl{
+        width: 100%;
+        margin: 10px;
+    }
+}
+
+/* CSS accueil fin */
+
+/* CSS comparatif */
+.row{
+    border-radius: 30px;
+}
+.colone{
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+}
+.logo-perso{
+    width: 50%;
+}
+.images{
+    filter: invert();
+}
+/* CSS comparatif fin */
+
+/*CSS equipe */
+.photo img{
+    width: 200px;
+    height: 200px;
+}
+.photo img:hover{
+    filter: sepia();
+}
+.photo{
+    transition: all 0.5s;
+}
+.photo:hover {
+    transform: scale(1.25);
+}
+.navbar{
+    background-color: #36505F;
+}
+.linkedin{
+    color: black;
+}
+.logo_link{
+    opacity: 0;
+    block-size: 2em;
+}
+a:hover .logo_link{
+    opacity: 100;
+}
+.nav-title{
+    color: white;
+}
+@media screen and (max-width:768px){
+
+    .logo{
+        display: none;
+    }
+  
+    a:hover .logo_link{
+        opacity: 0;
+    }
+    .nav-title:hover{
+        color: #FF9F00;
+    }
+    .svg_equipe{
+        display: none;
+    }
+    .photo:hover{
+        transform: scale(1);
+    }
+    .photo img:hover{
+        filter: none;
+    }
+}
+
+/* CSS equipe FIN */
+
+/*CSS contact */
+.section_contact{
+    background: rgb(30,139,195);
+    background: linear-gradient(90deg, rgba(30,139,195,0) 0%, rgba(30,139,195,0) 31%, rgba(30,139,195,1) 31%, rgba(30,139,195,1) 96%);
+}
+@media screen and (max-width: 992px ) { 
+    .section_contact{
+        background: none;
+    }
+    .contact{
+        background: rgb(30,139,195);
+    }
+}
+/*CSS contact fin
