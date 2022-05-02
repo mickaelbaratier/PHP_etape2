@@ -16,7 +16,7 @@
 <nav class="navbar navbar-expand-md navbar-light" id="navbar">
     <div class="container-xxl">
         <a href="index.html" class="navbar-brand">
-            <img src="images/logo.png" alt="Logo retour acceuil">
+            <img src="image/logo.png" alt="Logo retour acceuil">
         </a>
         <!-- button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
@@ -28,7 +28,7 @@
             <ul class="navbar-nav justify-content-around col-12 text-size-50">
                 <li class="nav-item" id="link">
                     <a href="index.html" class="nav-link d-flex flex-column flex-md-row align-items-center">
-                        <img src="images/logo.png" alt="logo" class="logo_link">
+                        <img src="image/logo.png" alt="logo" class="logo_link">
                         <h3 class="nav-title">Accueil</h3>
                     </a>
                 </li>
@@ -37,7 +37,7 @@
                 </svg>
                 <li class="nav-item" id="link">
                     <a href="comparatif.html" class="nav-link d-flex flex-column flex-md-row  align-items-center">
-                        <img src="images/logo.png" alt="logo" class="logo_link">
+                        <img src="image/logo.png" alt="logo" class="logo_link">
                         <h3 class="nav-title">Service</h3>
                     </a>
                 </li>
@@ -46,7 +46,7 @@
                 </svg>
                 <li class="nav-item" id="link">
                     <a href="equipe.html" class="nav-link d-flex flex-column flex-md-row  align-items-center">
-                        <img src="images/logo.png" alt="logo" class="logo_link">
+                        <img src="image/logo.png" alt="logo" class="logo_link">
                         <h3 class="nav-title">L'équipe</h3>
                     </a>
                 </li>
@@ -55,7 +55,7 @@
                 </svg>
                 <li class="nav-item" id="link">
                     <a href="contact.html" class="nav-link d-flex flex-column flex-md-row  align-items-center">
-                        <img src="images/logo.png" alt="logo" class="logo_link">
+                        <img src="image/logo.png" alt="logo" class="logo_link">
                         <h3 class="nav-title">Contact</h3>
                     </a>
                 </li>

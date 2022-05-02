@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 
 $name = "Création de site web";
 $price = 1000;
