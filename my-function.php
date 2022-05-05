@@ -5,7 +5,8 @@ function print_catalog($product){
         <div>
             <h2><?php echo $product[$part]["name"] ?> </h2>
             <p>
-                Prix pour une <?php echo $product[$part]["name"] ?> : <?php formatPrice($product[$part]["price"]) ?> .
+                Prix pour une <?php echo $product[$part]["name"] ?> : <?php formatPrice($product[$part]["price"]) ?> TTC,
+                soit <?php formatPrice(priceExcludingVAT($product[$part]["price"])) ?> Hors Taxes .
                 <br>Avec <?php echo $product[$part]["discount"] ?> % de reduction.
             </p>
             <img src="<?php echo $product[$part]["picture_url"] ?>" alt="<?php echo $product[$part]["name"] ?>">
@@ -19,3 +20,9 @@ function formatPrice($prix){
     $prix = number_format($prix, 2,',',' ');
     echo $prix . ' €';
 }
+function priceExcludingVAT($TTC){
+    $HT = ($TTC * 100)/(100 + 20);
+    return $HT;
+}
+
+
