@@ -5,7 +5,7 @@ function print_catalog($product){
         <div>
             <h2><?php echo $product[$part]["name"] ?> </h2>
             <p>
-                Prix pour une <?php echo $product[$part]["name"] ?> : <?php echo formatPrice($product[$part]["price"]) ?> €.
+                Prix pour une <?php echo $product[$part]["name"] ?> : <?php formatPrice($product[$part]["price"]) ?> .
                 <br>Avec <?php echo $product[$part]["discount"] ?> % de reduction.
             </p>
             <img src="<?php echo $product[$part]["picture_url"] ?>" alt="<?php echo $product[$part]["name"] ?>">
@@ -17,5 +17,5 @@ function formatPrice($prix){
     //$prix = floatval($prix);
     $prix = $prix/100;
     $prix = number_format($prix, 2,',',' ');
-    return $prix;
+    echo $prix . ' €';
 }
