@@ -27,7 +27,7 @@ include_once 'my-function.php';
         </div>
     </div>
 <?php
-echo print_catalog($product);
+echo print_catalog($products);
 ?>
     </body>
 <?php

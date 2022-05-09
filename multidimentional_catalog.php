@@ -1,6 +1,6 @@
 <?php
 include 'my-function.php';
-$product = [
+$products = [
     "creation_site_web" => [
         "name" => "creation de site web",
         "price" => 250000,
@@ -24,15 +24,22 @@ $product = [
     ],
 ];
 ?>
-<form>
+<form action="item.php" method="post">
     <div>
-        <img src="<?php echo $product["creation_site_web"]["picture_url"] ?>">
-        <p><?php echo $product["creation_site_web"]["name"] ?></p>
+        <img src="<?php echo $products["creation_site_web"]["picture_url"] ?>">
+        <p><?php echo $products["creation_site_web"]["name"] ?></p>
         <p>
-            <span class="barrer"><?php echo formatPrice($product["creation_site_web"]["price"]) ?></span>
-            <?php echo formatPourcent($product["creation_site_web"]["discount"]) ?>
+            <span class="barrer"><?php echo formatPrice($products["creation_site_web"]["price"]) . " TTC " ?></span>
+            <?php echo formatPoucent($products["creation_site_web"]["discount"]) ?>
         </p>
-        <p><?php echo formatPrice(discountPrice($product["creation_site_web"]["price"], $product["creation_site_web"]["discount"])) ?></p>
+        <p><?php echo formatPrice(discountPrice($products["creation_site_web"]["price"], $products["creation_site_web"]["discount"])) . " TTC " ?></p>
+        <label for="quantite">Quantité select </label>
+        <select name="quantite">
+            <?php for ($i = 1; $i < 11; $i++) { ?>
+                <option value="<?= $i ?>"><?= $i ?></option>
+            <?php } ?>
+        </select>
+        <input type="submit" value="COMMANDER">
     </div>
 
 </form>

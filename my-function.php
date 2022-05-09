@@ -1,15 +1,16 @@
 <?php
-function print_catalog($product){
-    foreach ($product as $part => $value) {
+function print_catalog($products){
+    foreach ($products as $value) {
+        var_dump($value);
         ?>
         <div>
-            <h2><?php echo $product[$part]["name"] ?> </h2>
+            <h2><?php echo $value["name"] ?> </h2>
             <p>
-                Prix pour une <?php echo $product[$part]["name"] ?> : <?php formatPrice(discountPrice($product[$part]["price"],$product[$part]["discount"])) ?> TTC,
-                soit <?php formatPrice(priceExcludingVAT(discountPrice($product[$part]["price"],$product[$part]["discount"]))) ?> Hors Taxes .
-                <br>Avec <?php echo $product[$part]["discount"] ?> % de reduction.
+                Prix pour une <?php echo $value["name"] ?> : <?php formatPrice(discountPrice($value["price"],$value["discount"])) ?> TTC,
+                soit <?php formatPrice(priceExcludingVAT(discountPrice($value["price"],$value["discount"]))) ?> Hors Taxes .
+                <br>Avec <?php echo $value["discount"] ?> % de reduction.
             </p>
-            <img src="<?php echo $product[$part]["picture_url"] ?>" alt="<?php echo $product[$part]["name"] ?>">
+            <img src="<?php echo $value["picture_url"] ?>" alt="<?php echo $value["name"] ?>">
         </div>
         <?php
     }
@@ -30,7 +31,6 @@ function discountPrice($prix, $solde){
 }
 function formatPoucent($pourcent)
 {
-    $pourcent = $pourcent * 100;
     echo "-" . $pourcent . "%";
 }
 
