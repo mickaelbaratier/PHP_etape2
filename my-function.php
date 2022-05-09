@@ -3,7 +3,7 @@ function print_catalog(array $products){
     foreach ($products as $product) {
         ?>
         <div>
-            <h2><?= $product["name"] ?> </h2>
+<h2><?= $product["name"] ?> </h2>
             <p>
                 Prix pour une <?= $product["name"] ?> : <?php formatPrice(discountPrice($product["price"],$product["discount"])) ?> TTC,
                 soit <?php formatPrice(priceExcludingVAT(discountPrice($product["price"],$product["discount"]))) ?> Hors Taxes .

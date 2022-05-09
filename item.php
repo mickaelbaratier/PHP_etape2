@@ -1,9 +1,7 @@
 <?php
 include 'header.php';
 include 'multidimentional_catalog.php';
-global $products;
 include_once 'my-function.php';
-
 ?>
 <div class="container-xl accueil">
         <div class="row g-0 bg-blue text-justify">
@@ -27,8 +25,7 @@ include_once 'my-function.php';
             </div>
         </div>
     </div>
-<?php print_catalog($products)?>
-
 <?php
+include 'print-product-for-command.php';
 include 'footer.php';
 ?>
