@@ -30,8 +30,9 @@ $product = [
         <p><?php echo $product["creation_site_web"]["name"] ?></p>
         <p>
             <span class="barrer"><?php echo formatPrice($product["creation_site_web"]["price"]) ?></span>
-            <?php echo formatPrice(discountPrice($product["creation_site_web"]["price"], $product["creation_site_web"]["discount"])) ?>
+            <?php echo formatPourcent($product["creation_site_web"]["discount"]) ?>
         </p>
+        <p><?php echo formatPrice(discountPrice($product["creation_site_web"]["price"], $product["creation_site_web"]["discount"])) ?></p>
     </div>
 
 </form>

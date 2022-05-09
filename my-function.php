@@ -28,4 +28,9 @@ function discountPrice($prix, $solde){
     $prix_final = $prix - (($prix * $solde)/100);
     return$prix_final;
 }
+function formatPoucent($pourcent)
+{
+    $pourcent = $pourcent * 100;
+    echo "-" . $pourcent . "%";
+}
 
