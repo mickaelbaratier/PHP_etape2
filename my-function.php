@@ -1,35 +1,34 @@
 <?php
-function print_catalog($products){
-    foreach ($products as $value) {
-        var_dump($value);
+function print_catalog(array $products){
+    foreach ($products as $product) {
         ?>
         <div>
-            <h2><?php echo $value["name"] ?> </h2>
+            <h2><?php echo $product["name"] ?> </h2>
             <p>
-                Prix pour une <?php echo $value["name"] ?> : <?php formatPrice(discountPrice($value["price"],$value["discount"])) ?> TTC,
-                soit <?php formatPrice(priceExcludingVAT(discountPrice($value["price"],$value["discount"]))) ?> Hors Taxes .
-                <br>Avec <?php echo $value["discount"] ?> % de reduction.
+                Prix pour une <?php echo $product["name"] ?> : <?php formatPrice(discountPrice($product["price"],$product["discount"])) ?> TTC,
+                soit <?php formatPrice(priceExcludingVAT(discountPrice($product["price"],$product["discount"]))) ?> Hors Taxes .
+                <br>Avec <?php echo $product["discount"] ?> % de reduction.
             </p>
-            <img src="<?php echo $value["picture_url"] ?>" alt="<?php echo $value["name"] ?>">
+            <img src="<?php echo $product["picture_url"] ?>" alt="<?php echo $product["name"] ?>">
         </div>
         <?php
     }
 }
-function formatPrice($prix){
+function formatPrice(float $prix){
     //$prix = floatval($prix);
     $prix = $prix/100;
     $prix = number_format($prix, 2,',',' ');
     echo $prix . ' €';
 }
-function priceExcludingVAT($TTC){
+function priceExcludingVAT(float $TTC){
     $HT = ($TTC * 100)/(100 + 20);
     return $HT;
 }
-function discountPrice($prix, $solde){
+function discountPrice(float $prix,int $solde){
     $prix_final = $prix - (($prix * $solde)/100);
-    return$prix_final;
+    return $prix_final;
 }
-function formatPoucent($pourcent)
+function formatPoucent(int $pourcent)
 {
     echo "-" . $pourcent . "%";
 }
