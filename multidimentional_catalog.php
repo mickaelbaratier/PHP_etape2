@@ -25,21 +25,22 @@ $products = [
 ];
 ?>
 <form action="item.php" method="post">
+    <?php foreach($products as $product){?>
     <div>
-        <img src="<?php echo $products["creation_site_web"]["picture_url"] ?>">
-        <p><?php echo $products["creation_site_web"]["name"] ?></p>
+        <img src="<?= $product["picture_url"] ?>">
+        <p><?= $product["name"] ?></p>
         <p>
-            <span class="barrer"><?php echo formatPrice($products["creation_site_web"]["price"]) . " TTC " ?></span>
-            <?php echo formatPoucent($products["creation_site_web"]["discount"]) ?>
+            <span class="barrer"><?= formatPrice($product["price"]) . " TTC " ?></span>
+            <?= formatPoucent($product["discount"]) ?>
         </p>
-        <p><?php echo formatPrice(discountPrice($products["creation_site_web"]["price"], $products["creation_site_web"]["discount"])) . " TTC " ?></p>
-        <label for="quantite">Quantité select </label>
-        <select name="quantite">
-            <?php for ($i = 1; $i < 11; $i++) { ?>
+        <p><?= formatPrice(discountPrice($product["price"], $product["discount"])) . " TTC " ?></p>
+        <label for="quantite<?=$value?>">Quantité select </label>
+        <select name="quantite<?=$value?>">
+            <?php for ($i = 0; $i < 11; $i++) { ?>
                 <option value="<?= $i ?>"><?= $i ?></option>
             <?php } ?>
         </select>
-        <input type="submit" value="COMMANDER">
     </div>
-
+    <?php } ?>
+    <input type="submit" value="COMMANDER">
 </form>

@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include_once 'multidimentional_catalog.php';
+include 'multidimentional_catalog.php';
 include_once 'my-function.php';
 
 ?>

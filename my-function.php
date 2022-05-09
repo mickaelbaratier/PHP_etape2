@@ -1,5 +1,5 @@
 <?php
-function print_catalog(array $products){
+function print_catalog($products){
     foreach ($products as $product) {
         ?>
         <div>
