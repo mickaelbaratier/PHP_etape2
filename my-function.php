@@ -1,15 +1,15 @@
 <?php
-function print_catalog($products){
+function print_catalog(array $products){
     foreach ($products as $product) {
         ?>
         <div>
-            <h2><?php echo $product["name"] ?> </h2>
+            <h2><?= $product["name"] ?> </h2>
             <p>
-                Prix pour une <?php echo $product["name"] ?> : <?php formatPrice(discountPrice($product["price"],$product["discount"])) ?> TTC,
+                Prix pour une <?= $product["name"] ?> : <?php formatPrice(discountPrice($product["price"],$product["discount"])) ?> TTC,
                 soit <?php formatPrice(priceExcludingVAT(discountPrice($product["price"],$product["discount"]))) ?> Hors Taxes .
-                <br>Avec <?php echo $product["discount"] ?> % de reduction.
+                <br>Avec <?= $product["discount"] ?> % de reduction.
             </p>
-            <img src="<?php echo $product["picture_url"] ?>" alt="<?php echo $product["name"] ?>">
+            <img src="<?= $product["picture_url"] ?>" alt="<?= $product["name"] ?>">
         </div>
         <?php
     }

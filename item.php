@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
 include 'multidimentional_catalog.php';
+global $products;
 include_once 'my-function.php';
 
 ?>
@@ -26,10 +27,8 @@ include_once 'my-function.php';
             </div>
         </div>
     </div>
-<?php
-echo print_catalog($products);
-?>
-    </body>
+<?php print_catalog($products)?>
+
 <?php
 include 'footer.php';
 ?>

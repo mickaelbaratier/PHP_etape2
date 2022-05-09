@@ -27,19 +27,20 @@ $products = [
 <form action="item.php" method="post">
     <?php foreach($products as $product){?>
     <div>
-        <img src="<?= $product["picture_url"] ?>">
+        <img src="<?= $product["picture_url"] ?>" alt="<?= "logo de " . $product["name"] ?>">
         <p><?= $product["name"] ?></p>
         <p>
             <span class="barrer"><?= formatPrice($product["price"]) . " TTC " ?></span>
-            <?= formatPoucent($product["discount"]) ?>
+            <?php formatPoucent($product["discount"]) ?>
         </p>
         <p><?= formatPrice(discountPrice($product["price"], $product["discount"])) . " TTC " ?></p>
-        <label for="quantite<?=$value?>">Quantité select </label>
-        <select name="quantite<?=$value?>">
-            <?php for ($i = 0; $i < 11; $i++) { ?>
-                <option value="<?= $i ?>"><?= $i ?></option>
-            <?php } ?>
-        </select>
+        <label for="quantite<?=$product["name"]?>">Quantité select
+            <select name="quantite<?=$product["name"]?>">
+                <?php for ($i = 0; $i < 11; $i++) { ?>
+                    <option value="<?= $i ?>"><?= $i ?></option>
+                <?php } ?>
+            </select>
+        </label>
     </div>
     <?php } ?>
     <input type="submit" value="COMMANDER">
