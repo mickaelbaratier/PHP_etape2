@@ -22,4 +22,3 @@ $products = [
         "picture_url" => "image\\283403-200.png",
     ],
 ];
-

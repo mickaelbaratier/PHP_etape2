@@ -64,10 +64,16 @@ $all_price = 0;
     <tr>
         <td></td>
         <td></td>
+        <?php include formulaire_transporteur.php?>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
         <td>Total TTC</td>
         <td>
             <?php formatPrice($all_price) ?>
         </td>
     </tr>
+
     </tbody>
 </table>
