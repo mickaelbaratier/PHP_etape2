@@ -1,5 +1,4 @@
 <?php
-include 'my-function.php';
 $products = [
     "creation_site_web" => [
         "name" => "creation de site web",

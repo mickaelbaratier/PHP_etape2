@@ -1,5 +1,5 @@
 <form action="cart.php" method="post">
-    <?php foreach($products as $product){?>
+    <?php foreach($products as $key => $product){?>
     <div>
         <img src="<?= $product["picture_url"] ?>" alt="<?= "logo de " . $product["name"] ?>">
         <p><?= $product["name"] ?></p>
@@ -8,8 +8,8 @@
             <?php formatPoucent($product["discount"]) ?>
         </p>
         <p><?= formatPrice(discountPrice($product["price"], $product["discount"])) . " TTC " ?></p>
-        <label for="<?=$product["name"]?>">Quantité select
-            <select name="<?=$product["name"]?>">
+        <label for="<?=$key?>">Quantité select
+            <select name="<?=$key?>">
                 <?php for ($i = 0; $i < 11; $i++) { ?>
                     <option value="<?= $i ?>"><?= $i ?></option>
                 <?php } ?>
