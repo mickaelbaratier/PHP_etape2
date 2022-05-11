@@ -1,5 +1,5 @@
 <form action="cart.php" method="post">
-    <div class="d-flex justify-content-between align-items-stretch">
+    <div class="form-group row">
         <?php foreach ($products as $key => $product) { ?>
             <div class="">
                 <div class="">
@@ -11,7 +11,7 @@
                 <div class="">
                     <p>
                         <span class="barrer"><?= formatPrice($product["price"]) . " TTC " ?></span>
-                        <?php formatPoucent($product["discount"]) ?>
+                        <?= formatPourcent($product["discount"]) ?>
                     </p>
                 </div>
                 <div class="">
@@ -29,5 +29,6 @@
             </div>
         <?php } ?>
     </div>
+    <input type="hidden" name="transporteur" value="LP">
     <input type="submit" value="COMMANDER">
 </form>

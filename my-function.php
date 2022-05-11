@@ -1,5 +1,6 @@
 <?php
-function print_catalog(array $products)
+declare(strict_types=1);
+function print_catalog(array $products): void
 {
     foreach ($products as $product) {
         ?>
@@ -7,10 +8,12 @@ function print_catalog(array $products)
             <h2><?= $product["name"] ?> </h2>
             <p>
                 Prix pour une <?= $product["name"] ?>
-                : <?php formatPrice(discountPrice($product["price"], $product["discount"])) ?> TTC,
-                soit <?php formatPrice(priceExcludingVAT(discountPrice($product["price"], $product["discount"]))) ?>
+                : <?= formatPrice(discountPrice($product["price"], $product["discount"])) ?> TTC,
+                soit <?= formatPrice(priceExcludingVAT(discountPrice($product["price"], $product["discount"]))) ?>
                 Hors Taxes .
-                <br>Avec <?= $product["discount"] ?> % de reduction.
+            </p>
+            <p>
+                Avec <?= $product["discount"] ?> % de reduction.
             </p>
             <img src="<?= $product["picture_url"] ?>" alt="<?= $product["name"] ?>">
         </div>
@@ -18,36 +21,31 @@ function print_catalog(array $products)
     }
 }
 
-function formatPrice(float $prix)
+function formatPrice(float $prix): string
 {
-    //$prix = floatval($prix);
-    $prix = $prix / 100;
-    $prix = number_format($prix, 2, ',', ' ');
-    echo $prix . ' €';
+    return number_format($prix / 100, 2, ',', ' ') . ' €';
 }
 
-function priceExcludingVAT(float $TTC)
+function priceExcludingVAT(float $TTC): float
 {
-    $HT = ($TTC * 100) / (100 + 20);
-    return $HT;
+    return ($TTC * 100) / (100 + 20);
 }
 
-function discountPrice(float $prix, int $solde)
+function discountPrice(float $prix, int $solde): float
 {
-    $prix_final = $prix - (($prix * $solde) / 100);
-    return $prix_final;
+    return $prix - (($prix * $solde) / 100);
 }
 
-function formatPoucent(int $pourcent)
+function formatPourcent(int $pourcent): string
 {
-    echo "-" . $pourcent . "%";
+    return "-" . $pourcent . "%";
 }
 
-function frais_port_la_poste(int $wight, float $price)
+function frais_port_la_poste(int $weight, float $price): float
 {
-    if ($wight < 500) {
+    if ($weight < 500) {
         $price_port = 500;
-    } elseif ($wight < 2000) {
+    } elseif ($weight < 2000) {
         $price_port = $price * (10 / 100);
     } else {
         $price_port = 0;
@@ -55,12 +53,12 @@ function frais_port_la_poste(int $wight, float $price)
     return $price_port;
 }
 
-function frais_port_DHL(int $wight, float $price)
+function frais_port_DHL(int $weight, float $price): float
 {
-    if ($wight < 1000) {
+    if ($weight < 1000) {
         $price_port = 1000;
-    } else{
-    $price_port = $price * (5 / 100);
-}
+    } else {
+        $price_port = $price * (5 / 100);
+    }
     return $price_port;
 }
