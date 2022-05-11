@@ -1,4 +1,13 @@
 <?php
+setcookie(
+    'LOGGED_USER',
+    'Visiteur1',
+    [
+        'expires' => time() + 24 * 3600,
+        'secure' => true,
+        'httponly' => true,
+    ]
+);
 include 'header.php';
 include 'multidimentional_catalog.php';
 include_once 'my-function.php';

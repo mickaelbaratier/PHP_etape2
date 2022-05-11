@@ -1,4 +1,8 @@
-<?php var_dump($_POST);
+<?php
+setcookie(
+        'cart',
+    $_POST,
+);
 include 'header.php';
 include_once 'multidimentional_catalog.php';
 include_once 'my-function.php';
@@ -7,7 +11,9 @@ $all_price = 0;
 $all_weight = 0;
 if (isset($_POST)) {
     $commands = $_POST;
-} else {
+} elseif (isset($_COOKIE)){
+    $commands = $_COOKIE['cart'];
+    }else{
     echo "/!\une erreur c'est produit. Recommencer votre selection de produit/!\ ";
 }
 ?>
